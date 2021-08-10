@@ -28,10 +28,10 @@ ylabel('R_{xx}(n)'); xlabel('n');
 
 %Calculating the pitch of the speech signal
 
-[pks, locs] = findpeaks(Rxx) ;%Returns indices and values of local maximma in correlation data (Rxx)
-min (fs./diff(locs)); mean(fs./diff(locs)); max(fs./diff(locs)); 
+[peaks, indices] = findpeaks(Rxx) ;%Returns indices and values of local maximma in correlation data (Rxx)
+min (fs./diff(indices)); mean(fs./diff(indices)); max(fs./diff(indices)); 
 
-[mm, peak1_ind] = min ((fs./diff(locs))); 
+[mm, peak1_ind] = min ((fs./diff(indices))); 
 period=locs(peak1_ind+1)-locs(peak1_ind); %comparing the "time" between peaks 
 pitch_Hz = fs/period; 
 
