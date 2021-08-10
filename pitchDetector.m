@@ -1,6 +1,6 @@
 clear; clc;
 
-%Read data from speech.wav file
+%Read data from speech2.wav file
 [y, fs]  =audioread('speech2.wav');
 subplot(2,1,1);
 plot(y)
