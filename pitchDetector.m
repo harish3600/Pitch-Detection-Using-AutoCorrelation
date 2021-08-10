@@ -40,4 +40,5 @@ disp(sprintf('The estimated pitch of the speech signal is %.2f Hz',pitch_Hz));
 [audioIn,fs] = audioread('speech2.ogg');
 f0 = pitch(audioIn,fs);
 
-disp(sprintf('The pitch of the speech signal (using MATLAB pitch function) is  %f Hz',f0)); 
+maxf0 = max(f0);
+disp(sprintf('The pitch of the speech signal (using MATLAB pitch function) is %.2f', maxf0));
