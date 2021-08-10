@@ -11,5 +11,11 @@
       The pitch of the speech signal (using MATLAB pitch function) is 400.00
      ```
       
+Team Number 26
+- Ananya Sane(2020102007)
+- Dosapati Sri Anvith}(2020102015)
+- Harish Umasankar(2020102067)
+- L Lakshmanan(2020112024)
+ 
 
 Implemented based on the tutorial from [MATLABHelper](https://matlabhelper.com/blog/matlab/pitch-detection-of-speech-signal-using-autocorrelation-method-in-matlab/)
