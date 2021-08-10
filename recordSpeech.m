@@ -13,5 +13,3 @@ filename = 'speech2.wav';
 
 %Write data in y to .wav file
 audiowrite('speech2.wav', y, 10000);
-info = audioinfo(filename);
-disp(info);
