@@ -1,0 +1,44 @@
+clear; clc;
+
+%Read data from speech.wav file
+[y, fs]  =audioread('speech2.wav');
+subplot(2,1,1);
+plot(y)
+title('Amplitude of Speech Signal');
+ylabel('Amplitude'); xlabel('Sample Number');
+
+%Calculating the AutoCorrelation of N samples of the signal y
+x  = (y(18000 : 20000)); %Considering 2000 samples of X
+
+Rxx = zeros(1,320);
+N = 32; %Consider N overlapping samples of x
+
+for n = 1:320
+       for k = 1:N
+           Rxx(n) = Rxx(n) + (x(k) .* x(k+n));
+           Rxx(n) = Rxx(n)/N;
+       end
+end
+Rxx;
+subplot(2,1,2);
+plot(Rxx)
+xlim([0  330]);
+title('Autocorrelation of Speech Signal');
+ylabel('R_{xx}(n)'); xlabel('n');
+
+%Calculating the pitch of the speech signal
+
+[pks, locs] = findpeaks(Rxx) ;%Returns indices and values of local maximma in correlation data (Rxx)
+min (fs./diff(locs)); mean(fs./diff(locs)); max(fs./diff(locs)); 
+
+[mm, peak1_ind] = min ((fs./diff(locs))); 
+period=locs(peak1_ind+1)-locs(peak1_ind); %comparing the "time" between peaks 
+pitch_Hz = fs/period; 
+
+disp(sprintf('The estimated pitch of the speech signal is %.2f Hz',pitch_Hz)); 
+
+[audioIn,fs] = audioread('speech2.ogg');
+f0 = pitch(audioIn,fs);
+
+disp(sprintf('The pitch of the speech signal (using MATLAB pitch function) is  %f Hz',f0)); 
+
