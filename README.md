@@ -13,7 +13,7 @@
       
 Team Number 26
 - Ananya Sane(2020102007)
-- Dosapati Sri Anvith}(2020102015)
+- Dosapati Sri Anvith (2020102015)
 - Harish Umasankar(2020102067)
 - L Lakshmanan(2020112024)
  
