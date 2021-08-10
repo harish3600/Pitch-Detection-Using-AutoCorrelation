@@ -32,7 +32,7 @@ ylabel('R_{xx}(n)'); xlabel('n');
 min (fs./diff(indices)); mean(fs./diff(indices)); max(fs./diff(indices)); 
 
 [mm, peak1_ind] = min ((fs./diff(indices))); 
-period=locs(peak1_ind+1)-locs(peak1_ind); %comparing the "time" between peaks 
+period=indices(peak1_ind+1)-indices(peak1_ind); %comparing the "time" between peaks 
 pitch_Hz = fs/period; 
 
 disp(sprintf('The estimated pitch of the speech signal is %.2f Hz',pitch_Hz)); 
@@ -41,4 +41,3 @@ disp(sprintf('The estimated pitch of the speech signal is %.2f Hz',pitch_Hz));
 f0 = pitch(audioIn,fs);
 
 disp(sprintf('The pitch of the speech signal (using MATLAB pitch function) is  %f Hz',f0)); 
-
