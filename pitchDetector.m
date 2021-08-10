@@ -13,10 +13,10 @@ x  = (y(18000 : 20000)); %Considering 2000 samples of X
 Rxx = zeros(1,320);
 N = 32; %Consider N overlapping samples of x
 
-for shiftIndex = 1:320
+for n = 1:320
        for k = 1:N
-           Rxx(shiftIndex) = Rxx(shiftIndex) + (x(k) .* x(k+shiftIndex));
-           Rxx(shiftIndex) = Rxx(shiftIndex)/N;
+           Rxx(n) = Rxx(n) + (x(k) .* x(k+n));
+           Rxx(n) = Rxx(n)/N;
        end
 end
 Rxx;
